@@ -36,3 +36,18 @@
 - ROLLBACK -> Descarta todos los cambios realizados en una transacción y los devuelve al estado anterior a la transacción
 - SAVEPOINT ->  Crea un punto de guardado dentro de una transacción, lo que permite realizar un ROLLBACK parcial hasta ese punto, sin deshacer toda la operación
 - RELEASE SAVEPOINT -> Elimina un punto de guardado creado previamente con SAVEPOIN. Después de haber ejecutado este comando no se podrá realizar un ROLLBACK parcial hasta ese punto.
+
+# Tipos de Datos en PostgreSQL
+
+- INTEGER -> Entero de 32 bits
+- BIGINT -> Entero de 64 bits
+- DECIMAL -> Numero decimal de precisión variable
+- JSON -> Es un tipo de dato usado especialmente en postgresaql, para almacenar datos de formato JSON de forma eficiente en la base de datos.
+- SERIAL -> En realidad no es un tipo, es un alias, que genera una secuencia de forma automática, su tipo real es un entero (INT) , pero se usa en postgresql para declarar que un campo es de valor autoincrementable.
+- BOOLEAN -> Valor booleano (verdadero o falso)
+- TEXT -> Cadena de texto de longitud variable
+- VARCHAR -> Cadena de texto variable con longitud máxima especificada
+- DATE -> FECHA
+- TIMESTAMP -> FECHA Y HORA
+- GEOMETRY -> Datos de geometria (puntos, líneas, polígonos etc)
+- BYTEA -> Datos binarios de longitud variable
