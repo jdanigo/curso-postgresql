@@ -16,3 +16,11 @@
 - UPDATE -> Se utiliza para actualizar datos existentes de una tabla, permite actualizar todos los registros o alguno en específico en función a la clausula WHERE.
 - DELETE -> Se utiliza para eliminar una o varias filas de una tabla, obedeciendo a la clausula WHERE, si no está presente, eliminará todos los registros.
 - MERGE -> Combina operaciones de tipo INSERT, UPDATE, DELETE en una sola sentencia.
+
+## Comandos DDL
+
+- CREATE -> Crea una nueva tabla, vista, índice o sinónimo.
+- ALTER -> Modifica la estructura de una tabla existente, como agregar, mofificar o eliminar columnas.
+- DROP -> Elmina una tabla, vista, índice o sinónimo.
+- TRUNCATE -> Elimina todos los datos de una tabla, pero conserva la estructura de la tabla.
+- RENAME -> Cambia el nombre de una tabla o de una columna existente.
