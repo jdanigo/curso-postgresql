@@ -24,3 +24,8 @@
 - DROP -> Elmina una tabla, vista, índice o sinónimo.
 - TRUNCATE -> Elimina todos los datos de una tabla, pero conserva la estructura de la tabla.
 - RENAME -> Cambia el nombre de una tabla o de una columna existente.
+
+## Comandos DCL
+
+- GRANT -> Otorga privilegios a los usuarios sobre objetos de la base de datos.
+- REVOKE -> Revoca los privilegios otorgados anteriormente.
