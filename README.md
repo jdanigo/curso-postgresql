@@ -29,3 +29,10 @@
 
 - GRANT -> Otorga privilegios a los usuarios sobre objetos de la base de datos.
 - REVOKE -> Revoca los privilegios otorgados anteriormente.
+
+## Comandos TCL
+
+- COMMIT -> Confirma los cambios realizados en una transacción y los guarda de forma permanente en la base de datos
+- ROLLBACK -> Descarta todos los cambios realizados en una transacción y los devuelve al estado anterior a la transacción
+- SAVEPOINT ->  Crea un punto de guardado dentro de una transacción, lo que permite realizar un ROLLBACK parcial hasta ese punto, sin deshacer toda la operación
+- RELEASE SAVEPOINT -> Elimina un punto de guardado creado previamente con SAVEPOIN. Después de haber ejecutado este comando no se podrá realizar un ROLLBACK parcial hasta ese punto.
