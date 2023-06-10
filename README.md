@@ -51,3 +51,19 @@
 - TIMESTAMP -> FECHA Y HORA
 - GEOMETRY -> Datos de geometria (puntos, líneas, polígonos etc)
 - BYTEA -> Datos binarios de longitud variable
+
+# Tipos de relaciones en bases de datos (SQL) Aplica para Postgresql, Sqlserver, Oracle, Mysql
+
+- Relación uno a uno (one-to-one) -> En esta relación, un registro en una tabla se relaciona con exactamente un solo registro en otra tabla y viceversa, Se utiliza cuando dos entidades tienen una relación directa y exclusiva entre sí.
+ Ejemplo: Tabla A (Cliente) -> id, nombre, dirección
+          Tabla B (Cliente_Detalle) -> id, id_cliente, fecha_nacimiento, numero_telefono, correo
+      
+- Uno a muchos (one-to-many) -> En esta relación, un registro en una tabla se relaciona con varios registros en otra tabla, pero cada registro en la segunda tabla, solo puede relacionarse con un único registro en la primera tabla. Se utiliza cuando una entidad se asocia con múltiples instancias de otra entidad.
+  Ejemplo: Departamento -> id, nombre
+  Empleado -> id, nombre, id_departamento
+  En este caso, cada departamento de la tabla A, puede tener varios empleados relacionados en la tabla B, pero cada empleado solo puede pertenecer a un departamento.
+ 
+- Relacion de muchos a muchos (many-to-many) -> En esta relación varios registros de una tabla, pueden relacionarse con varios registros en otra tabla y viceversa, Se utiliza cuando varias entidades se relaciones entre sí de forma no exclusiva, para poder lograr este tipo de relaciones, necesitamos una tabla intermedia.
+ Ejemplo: Tabla A (Estudiante) -> id, nombre
+          Tabla B (Curso) -> id, nombre, duracion
+          Tabla C tabla intermedia (Matriculas) -> id, id_estudiante, id_curso
