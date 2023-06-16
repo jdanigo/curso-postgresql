@@ -98,6 +98,23 @@ ALTER COLUMNA sexo TYPE varchar(20)
 --ALTER PARA AÑADIR UN CONSTRAINT
 ALTER TABLE public.personas
 ADD CONSTRAINT unique_mail UNIQUE (correo)
+
+
+-- DROP PARA BORRAR LA TABLA
+DROP TABLE personas
+
+-- DROP PARA BORRAR LA BASE DE DATOS
+DROP DATABASE colegio
+
+--ALTER COMBINADO CON UN DROP
+ALTER TABLE public.personas
+DROP CONSTRAINT unique_mail
+
+ALTER TABLE public.personas
+DROP COLUMN edad
+
+TRUNCATE public.personas
+
 ```
 
 ## Comandos DCL
