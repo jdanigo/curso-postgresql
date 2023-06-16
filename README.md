@@ -70,6 +70,20 @@ WHERE id = 2
 - TRUNCATE -> Elimina todos los datos de una tabla, pero conserva la estructura de la tabla.
 - RENAME -> Cambia el nombre de una tabla o de una columna existente.
 
+```
+--ALTER PARA AÑADIR COLUMNAS
+ALTER TABLE public.personas
+ADD edad INT
+
+--ALTER PARA CAMBIAR UNA COLUMNA
+ALTER TABLE public.personas
+ALTER COLUMNA sexo TYPE varchar(20)
+
+--ALTER PARA AÑADIR UN CONSTRAINT
+ALTER TABLE public.personas
+ADD CONSTRAINT unique_mail UNIQUE (correo)
+```
+
 ## Comandos DCL
 
 - GRANT -> Otorga privilegios a los usuarios sobre objetos de la base de datos.
