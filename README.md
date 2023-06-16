@@ -136,10 +136,10 @@ RENAME COLUMN edad2 TO edad
 - SAVEPOINT ->  Crea un punto de guardado dentro de una transacción, lo que permite realizar un ROLLBACK parcial hasta ese punto, sin deshacer toda la operación
 - RELEASE SAVEPOINT -> Elimina un punto de guardado creado previamente con SAVEPOIN. Después de haber ejecutado este comando no se podrá realizar un ROLLBACK parcial hasta ese punto.
 
-  ```
-  BEGIN; -- INICIAR LA TRANSACCION
+```
+  BEGIN;
 
---OPERACIONES SQL
+
 INSERT INTO public.personas2
 (tipo_documento,
  no_documento,
@@ -171,7 +171,8 @@ INSERT INTO public.personas2
  
 ROLLBACK; --TIRAR PARA ATRAS LOS CAMBIOS
 COMMIT; --CONFIRMAR LOS CAMBIOS
-  ```
+
+```
 
 # Tipos de Datos en PostgreSQL
 
