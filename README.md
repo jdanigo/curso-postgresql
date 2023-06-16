@@ -9,6 +9,15 @@
 - HAVING -> Permite aplicar condiciones a los grupos creados mediante GROUP BY
 - ORDER BY -> Ordena los resultados en función de una o varias columnas.
 
+ ```
+ SELECT * FROM public.personas
+ SELECT * FROM public.personas where id = 1 and no_documento = '12345678'
+ SELECT * FROM public.personas order by id desc
+ SELECT * FROM public.personas order by id asc
+ SELECT tipo_documento, COUNT(*) FROM public.personas group by tipo_documento
+ ```
+
+
 
 ## Comandos DML
 
