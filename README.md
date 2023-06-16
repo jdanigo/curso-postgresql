@@ -189,7 +189,7 @@ COMMIT; --CONFIRMAR LOS CAMBIOS
 - GEOMETRY -> Datos de geometria (puntos, líneas, polígonos etc)
 - BYTEA -> Datos binarios de longitud variable
 
-# Tipos de relaciones en bases de datos (SQL) Aplica para Postgresql, Sqlserver, Oracle, Mysql
+# Tipos de relaciones en bases de datos (SQL) Aplica para bases de datos ISO/IEC 9075:2016 o SQL:2016
 
 - Relación uno a uno (one-to-one) -> En esta relación, un registro en una tabla se relaciona con exactamente un solo registro en otra tabla y viceversa, Se utiliza cuando dos entidades tienen una relación directa y exclusiva entre sí.
  Ejemplo: Tabla A (Cliente) -> id, nombre, dirección
