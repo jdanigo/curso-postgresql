@@ -54,9 +54,9 @@ INSERT INTO public.personas
 	 '2023-06-15 00:00:00'
  );
 
- UPDATE public.personas
- SET nombres = 'Jose Daniel'
- WHERE id = 1
+UPDATE public.personas
+SET nombres = 'Jose Daniel'
+WHERE id = 1
 
 DELETE FROM public.personas
 WHERE id = 2
