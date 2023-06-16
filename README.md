@@ -115,6 +115,13 @@ DROP COLUMN edad
 
 TRUNCATE public.personas
 
+--RENAME
+ALTER TABLE public.personas
+RENAME TO personas2
+
+ALTER TABLE public.personas2
+RENAME COLUMN edad2 TO edad
+
 ```
 
 ## Comandos DCL
