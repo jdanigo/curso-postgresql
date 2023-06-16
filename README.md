@@ -71,6 +71,22 @@ WHERE id = 2
 - RENAME -> Cambia el nombre de una tabla o de una columna existente.
 
 ```
+-- CREAR UNA TABLA
+CREATE TABLE personas(
+Id SERIAL PRIMARY KEY,
+nombres varchar(20),
+apellidos varchar(20),
+tipo_documento varchar(20),
+no_documento varchar(20),
+fecha_nacimiento DATE,
+correo varchar(20),
+telefono varchar(20),
+sexo varchar(20),
+casado boolean,
+fecha_creacion timestamp,
+fecha_actualizacion timestamp
+)
+
 --ALTER PARA AÑADIR COLUMNAS
 ALTER TABLE public.personas
 ADD edad INT
