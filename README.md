@@ -26,6 +26,42 @@
 - DELETE -> Se utiliza para eliminar una o varias filas de una tabla, obedeciendo a la clausula WHERE, si no está presente, eliminará todos los registros.
 - MERGE -> Combina operaciones de tipo INSERT, UPDATE, DELETE en una sola sentencia.
 
+```
+INSERT INTO public.personas
+(tipo_documento,
+ no_documento,
+ nombres,
+ apellidos,
+ fecha_nacimiento,
+ correo,
+ telefono,
+ sexo,
+ casado,
+ fecha_creacion,
+ fecha_actualizacion)
+ VALUES
+ (
+	 'CE',
+	 '99885566',
+	 'Jack',
+	 'Smith',
+	 '2000-09-09',
+	 'smith.jack@gmail.com',
+	 '3048965241',
+	 'Masculino',
+	 false,
+	 '2023-06-15 00:00:00',
+	 '2023-06-15 00:00:00'
+ );
+
+ UPDATE public.personas
+ SET nombres = 'Jose Daniel'
+ WHERE id = 1
+
+DELETE FROM public.personas
+WHERE id = 2
+```
+
 ## Comandos DDL
 
 - CREATE -> Crea una nueva tabla, vista, índice o sinónimo.
