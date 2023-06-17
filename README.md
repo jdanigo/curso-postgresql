@@ -196,44 +196,37 @@ COMMIT; --CONFIRMAR LOS CAMBIOS
           Tabla B (Cliente_Detalle) -> id, id_cliente, fecha_nacimiento, numero_telefono, correo
 
   ```
+    --EJERCICIO RELACION 1-1 Y RELACION 1-N
+    --SCRIPT PARA CREAR TABLA ESTUDIANTES
+    create table estudiantes(
+    Id SERIAL primary key,
+    nombres varchar(50),
+    apellidos varchar(50),
+    correo varchar(100)
+    );
+    --SCRIPT PARA CREAR TABLA DIRECCIONES CON RELACION 1-1
+    create table direcciones(
+    id serial primary key,
+    nombre_direccion varchar(50),
+    direccion varchar(100),
+    ciudad varchar(50),
+    pais varchar(50),
+    id_estudiante integer references estudiantes(id) on delete cascade unique);
+    -- SCRIPT PARA CREAR TABLA DIRECCION CON RELACION 1-N
+    create table direcciones(
+    id serial primary key,
+    nombre_direccion varchar(50),
+    direccion varchar(100),
+    ciudad varchar(50),
+    pais varchar(50),
+    id_estudiante integer references estudiantes(id) on delete cascade);
+    insert into public.estudiantes (nombres, apellidos, correo) values ('Pedro', 'Suarez', 'pedro.suarez@gmail.com');
+    select * from public.estudiantes
+    select * from public.direcciones d
+    insert into public.direcciones (nombre_direccion, direccion, ciudad, pais, id_estudiante) values ('Casa', 'cra busquela con calle encuentrela', 'armenia', 'colombia', 1)
+    select e.id , e.nombres , d.direccion from estudiantes e inner join direcciones d on d.id_estudiante = e.id
 
-  EJERCICIO RELACION 1-1 Y RELACION 1-N
 
-
---SCRIPT PARA CREAR TABLA ESTUDIANTES
-create table estudiantes(
-Id SERIAL primary key,
-nombres varchar(50),
-apellidos varchar(50),
-correo varchar(100)
-);
-
---SCRIPT PARA CREAR TABLA DIRECCIONES CON RELACION 1-1
-create table direcciones(
-id serial primary key,
-nombre_direccion varchar(50),
-direccion varchar(100),
-ciudad varchar(50),
-pais varchar(50),
-id_estudiante integer references estudiantes(id) on delete cascade unique
-);
-
--- SCRIPT PARA CREAR TABLA DIRECCION CON RELACION 1-N
-create table direcciones(
-id serial primary key,
-nombre_direccion varchar(50),
-direccion varchar(100),
-ciudad varchar(50),
-pais varchar(50),
-id_estudiante integer references estudiantes(id) on delete cascade
-);
-
-insert into public.estudiantes (nombres, apellidos, correo) values ('Pedro', 'Suarez', 'pedro.suarez@gmail.com');
-select * from public.estudiantes 
-select * from public.direcciones d 
-insert into public.direcciones (nombre_direccion, direccion, ciudad, pais, id_estudiante) values ('Casa', 'cra busquela con calle encuentrela', 'armenia', 'colombia', 1)
-
-select e.id , e.nombres , d.direccion  from estudiantes e inner join direcciones d on d.id_estudiante = e.id 
 
 
   ```
