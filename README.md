@@ -282,4 +282,57 @@ where e.id = 3
 
  ```
 
+
+```
+create table clientes(
+id SERIAL primary key,
+nombre varchar(50)
+);
+
+-- ON DELETE CASCADE , si la tabla principal elimina un registro, todos los registros en la tabla secundaria seran eliminados
+create table pedidos(
+id SERIAL primary key,
+cliente_id integer, 
+descripcion varchar(100),
+foreign key (cliente_id) references clientes(id) on delete cascade 
+);
+
+-- ON DELETE SET NULL
+create table pedidos(
+id SERIAL primary key,
+cliente_id integer, 
+descripcion varchar(100),
+foreign key (cliente_id) references clientes(id) on delete set null 
+);
+
+-- ON DELETE RESTRICT
+create table pedidos(
+id SERIAL primary key,
+cliente_id integer, 
+descripcion varchar(100),
+foreign key (cliente_id) references clientes(id) on delete restrict
+);
+
+
+drop table public.clientes cascade
+drop table public.pedidos 
+
+insert into clientes(nombre) values ('Pedro'), ('Juan'), ('Alberto');
+
+insert into pedidos (cliente_id, descripcion) values
+(1, 'Pedido de ejemplo 1'),
+(1, 'Pedido de ejemplo 2'),
+(1, 'Pedido de ejemplo 3'),
+(2, 'Pedido de ejemplo 1'),
+(2, 'Pedido de ejemplo 2'),
+(2, 'Pedido de ejemplo 3');
+
+select * from public.clientes
+
+select * from public.pedidos
+
+delete from public.pedidos where cliente_id = 1
+
+delete from public.clientes where id = 1
+```
   
