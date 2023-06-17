@@ -255,7 +255,7 @@ codigo_curso int,
 duracion int
 );
 
--- TABLA INTERMEDIA
+*TABLA INTERMEDIA
 create table matriculas(
 id serial,
 id_estudiante integer references estudiantes(id),
