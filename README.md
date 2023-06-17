@@ -240,3 +240,48 @@ COMMIT; --CONFIRMAR LOS CAMBIOS
  Ejemplo: Tabla A (Estudiante) -> id, nombre
           Tabla B (Curso) -> id, nombre, duracion
           Tabla C tabla intermedia (Matriculas) -> id, id_estudiante, id_curso
+ ```
+*RELACION M-M cursos-estudiantes
+
+create table cursos(
+id serial primary key,
+nombre varchar(50),
+codigo_curso int,
+duracion int
+);
+
+-- TABLA INTERMEDIA
+create table matriculas(
+id serial,
+id_estudiante integer references estudiantes(id),
+id_curso integer references cursos(id),
+primary KEY(id_estudiante, id_curso) 
+);
+
+*llave compuesta, llave primaria compuesta, me garantiza que los campos seleccionados dentro de la llave compuesta, sean únicos en todos los registros de esta tabla.
+
+
+insert into public.estudiantes (nombres, apellidos, correo)
+values
+('Daniel', 'Garces', 'm-7@gmail.com'),
+('Santiago', 'Jimenez', 'm-6@gmail.com'),
+('Albeiro', 'Salazar', 'm-4@gmail.com'),
+('Matias', 'Campo', 'm-2@gmail.com'),
+('Daniela', 'Martinez', 'm.2@gmail.com');
+
+insert into cursos (nombre, codigo_curso , duracion) values ('Filosofia', 78,1),('Redes 1', 45,2);
+
+select * from public.cursos c;
+select * from public.estudiantes e;
+
+insert into matriculas (id_estudiante, id_curso) values (3,1), (3,2), (3,3)
+
+
+select e.id , e.nombres , e.apellidos , c.nombre , c.duracion  from estudiantes e 
+inner join matriculas m on m.id_estudiante = e.id 
+inner join cursos c on c.id = m.id_curso 
+where e.id = 3
+
+ ```
+
+  
