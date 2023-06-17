@@ -198,7 +198,6 @@ COMMIT; --CONFIRMAR LOS CAMBIOS
   ```
   *EJERCICIO RELACION 1-1 Y RELACION 1-N
 
-
 *SCRIPT PARA CREAR TABLA ESTUDIANTES
 create table estudiantes(
 Id SERIAL primary key,
@@ -233,7 +232,6 @@ select * from public.direcciones d
 insert into public.direcciones (nombre_direccion, direccion, ciudad, pais, id_estudiante) values ('Casa', 'cra busquela con calle encuentrela', 'armenia', 'colombia', 1)
 
 select e.id , e.nombres , d.direccion  from estudiantes e inner join direcciones d on d.id_estudiante = e.id 
-
   ```
       
 - Uno a muchos (one-to-many) -> En esta relación, un registro en una tabla se relaciona con varios registros en otra tabla, pero cada registro en la segunda tabla, solo puede relacionarse con un único registro en la primera tabla. Se utiliza cuando una entidad se asocia con múltiples instancias de otra entidad.
