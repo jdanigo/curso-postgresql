@@ -281,7 +281,7 @@ inner join cursos c on c.id = m.id_curso
 where e.id = 3
 
  ```
-
+## Ejemplo de constraints on delete
 
 ```
 create table clientes(
